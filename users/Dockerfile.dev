@@ -1,0 +1,18 @@
+FROM python:3.9-slim-buster
+
+WORKDIR /app/users
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+
+ENV FLASK_APP=app.py
+ENV FLASK_ENV=development
+ENV FLASK_DEBUG=1
+
+EXPOSE 8001
+
+
+# CMD ["python3", "app.py"]
+CMD ["flask", "run", "--host", "0.0.0.0"]
