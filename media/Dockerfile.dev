@@ -1,0 +1,13 @@
+FROM node:current-alpine
+
+RUN npm install -g pnpm
+
+WORKDIR /app/media
+
+COPY package.json .
+
+RUN pnpm install
+
+COPY . .
+
+CMD ["pnpm", "dev"]
