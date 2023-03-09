@@ -7,8 +7,8 @@ user_bp = Blueprint("user", __name__)
 
 @user_bp.route("/")
 def main_route():
-    # in this code we're talking with "pictures" services
-    response = requests.get("http://pictures:8000")
+    # in this code we're talking with "media" services
+    response = requests.get("http://media:8000")
     return jsonify({"message": "flask app", "data": response.json()})
 
 
