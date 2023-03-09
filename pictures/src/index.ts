@@ -1,12 +1,12 @@
-import express from "express";
+import express, { Application, Response, Request } from "express";
 import morgan from "morgan";
-const app = express();
+const app: Application = express();
 import axios from "axios";
 app.set("port", process.env.PORT || 8000);
 
 app.use(morgan("dev"));
 
-app.get("/", (_req, res) => {
+app.get("/", (_req: Request, res: Response) => {
   axios
     // .get("https://jsonplaceholder.typicode.com/users")
     .get("http://users:5000/users")
