@@ -25,6 +25,7 @@ services:
 
   users-db:
     image: postgres
+    container_name: users-postgreSQL
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
@@ -32,23 +33,23 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
 
-  # pictures express microservice
-  pictures:
-    container_name: pictures-express
+  # media express microservice
+  media:
+    container_name: media-express
     build:
-      context: ./pictures
+      context: ./media
       dockerfile: ./Dockerfile.dev
     ports:
       - "8000:8000"
     environment:
       PORT: 8000
     volumes:
-      - ./pictures:/app/pictures
+      - ./media:/app/media
     networks:
       - picturely-network
 
   nginx:
-    container_name: nginx
+    container_name: nginx-server
     image: nginx:latest
     ports:
       - "80:80"
@@ -56,7 +57,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - users
-      - pictures
+      - media
     networks:
       - picturely-network
 
