@@ -11,6 +11,6 @@ too and you have installed docker and docker-compose in your machine, you can ju
 command and everything will be available for coding:
 
 ```sh
-# for development evironment
+# for development environment
 docker compose -f docker-compose-dev.yml --build
 ```
