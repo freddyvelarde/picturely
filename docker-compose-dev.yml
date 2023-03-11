@@ -48,6 +48,22 @@ services:
     networks:
       - picturely-network
 
+  # posts
+  posts:
+    container_name: posts-gin
+    build:
+      context: ./posts
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./posts:/app/posts
+    environment:
+      GIN_MODE: debug
+      PORT: 8080
+    networks:
+      - picturely-network
+
   nginx:
     container_name: nginx-server
     image: nginx:latest

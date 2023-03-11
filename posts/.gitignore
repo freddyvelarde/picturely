@@ -5,11 +5,6 @@
 *.so
 *.dylib
 
-# Dependency directories
-/vendor/
-/go.sum
-/go.mod
-$GOPATH/pkg/*
 
 # Compiled Object files, Static and Dynamic libs
 *.o
