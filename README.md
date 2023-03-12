@@ -1,8 +1,8 @@
 # Picturely
 
-Picturely is a social media app that allows users to share their photos
-and connect with others around the world. It's designed as a clone of Instagram,
-with similar features and functionality.
+ShieldPassword is a password manager app that securely stores all your login credentials and
+sensitive information in one place. With shieldPassword, you can generate strong passwords,
+autofill login forms, and access your passwords from anywhere, on any device.
 
 ## Getting started and Installation:
 

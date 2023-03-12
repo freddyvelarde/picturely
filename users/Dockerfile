@@ -1,10 +1,13 @@
-FROM python:3.9
+FROM node:current-alpine
 
-WORKDIR /app/users
+WORKDIR /app/media
 
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+COPY package.json .
+
+RUN npm install
 
 COPY . .
 
-CMD ["flask", "run", "--host=0.0.0.0"]
+EXPOSE 8001
+
+CMD ["npm", "start"]
