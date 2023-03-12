@@ -1,6 +1,6 @@
 # Install "users" express dependencies
 echo "Installing users express dependencies"
-cd ./media/
+cd ./users/
 pnpm i
 cd ../
 
