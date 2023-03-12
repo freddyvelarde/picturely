@@ -24,7 +24,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: admin
       MONGO_INITDB_DATABASE: usersdb
     volumes:
-      - mongo-data:/data/db
+      - mongodb-data:/data/db
     logging:
       driver: none
     networks:
@@ -50,7 +50,7 @@ services:
       - mongo
 
 volumes:
-  mongo-data:
+  mongodb-data:
 
 networks:
   app-network:
