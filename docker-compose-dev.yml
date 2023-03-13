@@ -30,7 +30,7 @@ services:
     networks:
       - app-network
     logging:
-      driver: none
+      driver: "none"
 
   users:
     container_name: users-express
@@ -44,6 +44,7 @@ services:
       - "8000:8000"
     environment:
       PORT: 8000
+      ME_CONFIG_MONGODB_URL: mongodb://admin:admin@mongo:27017/usersdb?authSource=admin
     volumes:
       - ./users:/app/users
     depends_on:

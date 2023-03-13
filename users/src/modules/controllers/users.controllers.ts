@@ -3,7 +3,7 @@ import User from "../model/users.model";
 
 export const createNewUsers = async (_req: Request, res: Response) => {
   try {
-    await User.create({name: "Erick Velarde", email: "erick@gmail.com", password: "12345"});
+    await User.create({name: "Freddy Velarde", email: "fredd@gmail.com", password: "qwerty"});
     res.send("user was created");
   } catch (err) {
     res.send(err);
