@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // routes
-import userRouters from "./modules/routers/users.routers";
+import userRouters from "./modules/users/routers/users.routers";
 app.use(userRouters);
 
 app.get("/", (_req: Request, res: Response) => {
